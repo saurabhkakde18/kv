@@ -2541,3 +2541,34 @@ body {
   fill: none;
   stroke-width: 2.5;
 }
+
+/* ================= APP BOTTOM TABS ================= */
+.app-bottom-tabs {
+  display: flex;
+  justify-content: space-around;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  position: sticky;
+  bottom: 72px; /* Sits above android nav */
+  z-index: 998;
+}
+.app-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s;
+  outline: none;
+}
+.app-tab-btn.active {
+  color: var(--gold-primary);
+}
+.app-tab-btn.active div:first-child {
+  transform: scale(1.15);
+}
+

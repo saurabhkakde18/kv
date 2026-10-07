@@ -5,8 +5,8 @@
 
 // Global App State
 const state = {
-  activeTab: 'dashboard',
-  history: ['dashboard'],
+  activeTab: 'home',
+  history: ['home'],
   searchQuery: '',
   searchFilter: 'ALL',
   favorites: JSON.parse(localStorage.getItem('vfh_favorites') || '[]'),
@@ -784,27 +784,36 @@ function renderView() {
 
   // Global Auth Check
   const loggedInId = localStorage.getItem('vfh_auth_id');
-  const headerTabs = document.getElementById('header-tabs');
   const searchSection = document.querySelector('.search-section');
   const topActions = document.querySelector('.top-actions');
   const androidNav = document.getElementById('android-nav');
+  const appBottomTabs = document.getElementById('app-bottom-tabs');
   
   if (loggedInId !== 'KV0001') {
-    // Lock the app
-    if (headerTabs) headerTabs.style.display = 'none';
     if (searchSection) searchSection.style.display = 'none';
     if (topActions) topActions.style.visibility = 'hidden';
     if (androidNav) androidNav.style.display = 'none';
+    if (appBottomTabs) appBottomTabs.style.display = 'none';
     
     renderLoginScreen(main);
     return;
   }
   
   // Unlock the app
-  if (headerTabs) headerTabs.style.display = 'flex';
   if (searchSection) searchSection.style.display = 'block';
   if (topActions) topActions.style.visibility = 'visible';
   if (androidNav) androidNav.style.display = 'flex';
+
+  // Manage Bottom Tabs Visibility
+  const isMainScreen = ['home', 'finance', 'tools'].includes(state.activeTab);
+  if (appBottomTabs) {
+    appBottomTabs.style.display = isMainScreen ? 'flex' : 'none';
+    if (isMainScreen) {
+      document.querySelectorAll('.app-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === state.activeTab);
+      });
+    }
+  }
 
   // If in global search mode
   if (state.searchQuery.trim().length > 0) {
@@ -815,15 +824,10 @@ function renderView() {
 
   chips.style.display = 'none';
 
-  // Highlight active tab
-  document.querySelectorAll('.tab-item').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-tab') === state.activeTab);
-  });
-  
   // Toggle Global Logout icon
   const logoutBtn = document.getElementById('btn-logout-shortcut');
   if (logoutBtn) {
-    if (localStorage.getItem('vfh_auth_id') === 'KV0001') {
+    if (loggedInId === 'KV0001') {
       logoutBtn.style.display = 'inline-flex';
     } else {
       logoutBtn.style.display = 'none';
@@ -831,46 +835,181 @@ function renderView() {
   }
 
   switch (state.activeTab) {
+    case 'home':
+      renderHomeScreen(main);
+      break;
+    case 'finance':
+      renderFinanceScreen(main);
+      break;
+    case 'tools':
+      renderToolsScreen(main);
+      break;
+    // Sub-pages routed to existing modules
     case 'dashboard':
+    case 'sub_dashboard':
       renderExecutiveDashboard(main);
       break;
+      break;
+    case 'sub_approved_cars':
     case 'approved_cars':
       renderApprovedCarsScreen(main);
       break;
+    case 'sub_cv_grid':
     case 'cv_grid':
       renderCvGridScreen(main);
       break;
+    case 'sub_emi_calculator':
     case 'emi_calculator':
       renderEmiCalculator(main);
       break;
+    case 'sub_valuation_calculator':
     case 'valuation_calculator':
       renderValuationCalculatorScreen(main);
       break;
+    case 'sub_dsa_payout':
     case 'dsa_payout':
       renderPayoutScreen(main);
       break;
+    case 'sub_irr_matrix':
     case 'irr_matrix':
-      renderIrrMatrix(main);
+      renderIrrMatrixScreen(main);
       break;
-    case 'documents':
-      renderDocumentsScreen(main);
+    case 'sub_car_policy':
+    case 'car_policy':
+      renderCarPolicy(main);
       break;
-    case 'new_lead':
-      renderNewLeadScreen(main);
+    case 'sub_cv_policy':
+    case 'cv_policy':
+      renderCvPolicy(main);
       break;
+    case 'sub_contacts':
     case 'contacts':
       renderContactsScreen(main);
       break;
+    case 'sub_favorites':
     case 'favorites':
       renderFavoritesScreen(main);
       break;
+    case 'sub_new_lead':
+    case 'new_lead':
+      renderNewLeadScreen(main);
+      break;
+    case 'sub_profile':
     case 'profile':
       renderProfileScreen(main);
       break;
     default:
-      renderGenericDataset(main, state.activeTab);
+      renderHomeScreen(main);
       break;
   }
+}
+
+// ================= NEW 3-SCREEN ARCHITECTURE =================
+
+function renderHomeScreen(container) {
+  const empName = localStorage.getItem('vfh_emp_name') || 'User';
+  container.innerHTML = `
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 24px;">
+      <img src="logo.jpg" alt="KV FLASH" style="width: 140px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div class="hero-title" style="text-align: center;">Welcome, ${empName}</div>
+      <div class="hero-subtitle" style="text-align: center;">KV FLASH Luxury Portal</div>
+    </div>
+    
+    <div class="setting-row" style="margin-bottom: 16px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">QUICK ACTIONS</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <button class="btn btn-primary" onclick="state.activeTab='sub_new_lead'; state.history.push('sub_new_lead'); renderView();">🚀 Log Lead</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); border: 1px solid var(--border);" onclick="state.activeTab='sub_profile'; state.history.push('sub_profile'); renderView();">👤 Profile</button>
+      </div>
+    </div>
+    
+    <div class="setting-row" style="margin-bottom: 16px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">DASHBOARD ALERTS</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 12px; background: rgba(239, 68, 68, 0.1); border-left: 3px solid #EF4444; border-radius: 4px;">
+          <strong style="color: #EF4444; font-size: 13px;">Pending Case (URGENT)</strong>
+          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Jaguar XF approval pending for Ramesh K.</div>
+        </div>
+        <div style="padding: 12px; background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--gold-primary); border-radius: 4px;">
+          <strong style="color: var(--gold-primary); font-size: 13px;">Recent Case Updates</strong>
+          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">2 cases successfully disbursed today.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="setting-row">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">SHORTCUTS</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center;">
+        <div onclick="state.activeTab='sub_emi_calculator'; state.history.push('sub_emi_calculator'); renderView();" style="background: var(--surface); padding: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+          <div style="font-size: 24px;">🧮</div>
+          <div style="font-size: 11px; margin-top: 6px; font-weight: 600;">EMI Calc</div>
+        </div>
+        <div onclick="state.activeTab='sub_irr_matrix'; state.history.push('sub_irr_matrix'); renderView();" style="background: var(--surface); padding: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+          <div style="font-size: 24px;">📈</div>
+          <div style="font-size: 11px; margin-top: 6px; font-weight: 600;">Rate Matrix</div>
+        </div>
+        <div onclick="state.activeTab='sub_approved_cars'; state.history.push('sub_approved_cars'); renderView();" style="background: var(--surface); padding: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+          <div style="font-size: 24px;">🚗</div>
+          <div style="font-size: 11px; margin-top: 6px; font-weight: 600;">Vehicle Search</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderFinanceScreen(container) {
+  container.innerHTML = `
+    <div class="hero-card">
+      <div class="hero-title">Finance & Cases</div>
+      <div class="hero-subtitle">Manage all financial operations</div>
+    </div>
+    
+    <div class="setting-row" style="margin-top: 16px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">CUSTOMER CASES</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_new_lead'; state.history.push('sub_new_lead'); renderView();">➕ New Case</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_contacts'; state.history.push('sub_contacts'); renderView();">📂 Existing Cases & Details</button>
+      </div>
+    </div>
+    
+    <div class="setting-row" style="margin-top: 16px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">FINANCIAL TOOLS</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_emi_calculator'; state.history.push('sub_emi_calculator'); renderView();">🧮 EMI Calculator</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_valuation_calculator'; state.history.push('sub_valuation_calculator'); renderView();">💰 Loan Calculator</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_irr_matrix'; state.history.push('sub_irr_matrix'); renderView();">📈 IRR Matrix</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_car_policy'; state.history.push('sub_car_policy'); renderView();">📑 Finance Policy</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_dsa_payout'; state.history.push('sub_dsa_payout'); renderView();">💸 DSA Payout</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderToolsScreen(container) {
+  container.innerHTML = `
+    <div class="hero-card">
+      <div class="hero-title">Master Tools & Grids</div>
+      <div class="hero-subtitle">Comprehensive lookup grids</div>
+    </div>
+    
+    <div class="setting-row" style="margin-top: 16px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">VEHICLE GRIDS</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_approved_cars'; state.history.push('sub_approved_cars'); renderView();">🚗 Approved Car Models</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_cv_grid'; state.history.push('sub_cv_grid'); renderView();">🚐 Commercial Vehicle (CV) Grid</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_car_policy'; state.history.push('sub_car_policy'); renderView();">📋 Vehicle Finance Policy</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_cv_policy'; state.history.push('sub_cv_policy'); renderView();">🚚 CV Finance Policy</button>
+      </div>
+    </div>
+    
+    <div class="setting-row" style="margin-top: 16px;">
+      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">ALL TOOLS</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_dashboard'; state.history.push('sub_dashboard'); renderView();">📊 Legacy Executive Dashboard</button>
+        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_favorites'; state.history.push('sub_favorites'); renderView();">⭐ Favorites & Saved Grids</button>
+      </div>
+    </div>
+  `;
 }
 
 // ================= MODULE 0: EXECUTIVE DASHBOARD =================
@@ -4251,32 +4390,49 @@ document.addEventListener('DOMContentLoaded', () => {
     renderView();
   });
 
+  // Bottom Tab Listeners
+  document.querySelectorAll('.app-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newTab = btn.getAttribute('data-tab');
+      if (state.activeTab !== newTab) {
+        state.history.push(newTab);
+        state.activeTab = newTab;
+        renderView();
+      }
+    });
+  });
+
   // Android Navigation Bar Listeners
-  const screenOrder = ['contacts', 'dashboard', 'profile'];
+  const screenOrder = ['home', 'finance', 'tools'];
 
   document.getElementById('nav-back')?.addEventListener('click', () => {
-    if (state.activeTab === 'dashboard' || state.activeTab === 'profile') {
-      state.activeTab = 'contacts';
-      state.history.push('contacts');
-    } else if (!screenOrder.includes(state.activeTab) && state.history.length > 1) {
-      state.history.pop();
-      state.activeTab = state.history[state.history.length - 1];
+    // If not a main screen and we have history, pop to go back
+    if (!screenOrder.includes(state.activeTab) && state.history.length > 1) {
+      state.history.pop(); // remove current
+      state.activeTab = state.history[state.history.length - 1]; // get prev
+    } else {
+      // If we are on a main screen, nav-back mimics standard back (closing app/dashboard)
+      if (state.activeTab !== 'home') {
+        state.activeTab = 'home';
+        state.history.push('home');
+      }
     }
     renderView();
   });
 
   document.getElementById('nav-home')?.addEventListener('click', () => {
-    if (state.activeTab !== 'dashboard') {
-      state.history.push('dashboard');
-      state.activeTab = 'dashboard';
+    if (state.activeTab !== 'home') {
+      state.history.push('home');
+      state.activeTab = 'home';
       renderView();
     }
   });
 
   document.getElementById('nav-recent')?.addEventListener('click', () => {
-    if (state.activeTab !== 'profile') {
-      state.history.push('profile');
-      state.activeTab = 'profile';
+    // Recent maps to Tools acting as a hub
+    if (state.activeTab !== 'tools') {
+      state.history.push('tools');
+      state.activeTab = 'tools';
       renderView();
     }
   });
