@@ -775,6 +775,13 @@ function renderView() {
   const main = document.getElementById('main-content');
   const chips = document.getElementById('search-filter-chips');
 
+  // Trigger CSS Slide Animation
+  if (main) {
+    main.style.animation = 'none';
+    main.offsetHeight; // force reflow
+    main.style.animation = null;
+  }
+
   // Global Auth Check
   const loggedInId = localStorage.getItem('vfh_auth_id');
   const headerTabs = document.getElementById('header-tabs');
@@ -4245,12 +4252,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Android Navigation Bar Listeners
+  const screenOrder = ['contacts', 'dashboard', 'profile'];
+
   document.getElementById('nav-back')?.addEventListener('click', () => {
-    if (state.history.length > 1) {
+    if (state.activeTab === 'dashboard' || state.activeTab === 'profile') {
+      state.activeTab = 'contacts';
+      state.history.push('contacts');
+    } else if (!screenOrder.includes(state.activeTab) && state.history.length > 1) {
       state.history.pop();
       state.activeTab = state.history[state.history.length - 1];
-    } else {
-      state.activeTab = 'dashboard';
     }
     renderView();
   });
@@ -4264,15 +4274,55 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('nav-recent')?.addEventListener('click', () => {
-    // Recent acts as App Switcher (Scroll header into view or toggle search)
-    const headerTabs = document.getElementById('header-tabs');
-    if (headerTabs) {
-      headerTabs.scrollIntoView({ behavior: 'smooth' });
-      // Brief highlight effect on tabs
-      headerTabs.style.boxShadow = '0 0 20px var(--gold-primary)';
-      setTimeout(() => headerTabs.style.boxShadow = 'none', 1000);
+    if (state.activeTab !== 'profile') {
+      state.history.push('profile');
+      state.activeTab = 'profile';
+      renderView();
     }
   });
+
+  // Swipe to Slide Screens
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  const mainContent = document.getElementById('main-content');
+  if (mainContent) {
+    mainContent.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    mainContent.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swiped Left
+      let idx = screenOrder.indexOf(state.activeTab);
+      if (idx !== -1 && idx < screenOrder.length - 1) {
+        state.activeTab = screenOrder[idx + 1];
+        state.history.push(state.activeTab);
+        renderView();
+      }
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+      // Swiped Right
+      let idx = screenOrder.indexOf(state.activeTab);
+      if (idx !== -1 && idx > 0) {
+        state.activeTab = screenOrder[idx - 1];
+        state.history.push(state.activeTab);
+        renderView();
+      } else if (idx === -1 && state.history.length > 1) {
+        // Swiping right inside a tool acts like "Back"
+        state.history.pop();
+        state.activeTab = state.history[state.history.length - 1];
+        renderView();
+      }
+    }
+  }
 
   // Global Search Input (250ms debounced)
   let searchTimer;

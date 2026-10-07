@@ -432,6 +432,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  animation: slideIn 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(50px); opacity: 0.5; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 /* Hero Cards */
