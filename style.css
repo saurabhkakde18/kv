@@ -2572,3 +2572,58 @@ body {
   transform: scale(1.15);
 }
 
+/* ================= COMPACT IOS-STYLE LISTS ================= */
+.list-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin: 0 0 6px 12px;
+  letter-spacing: 0.5px;
+}
+.list-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.list-item:last-child {
+  border-bottom: none;
+}
+.list-item:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+.list-item-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.list-item-icon {
+  font-size: 18px;
+}
+.list-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.list-item-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.chevron {
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+

@@ -909,49 +909,45 @@ function renderView() {
 function renderHomeScreen(container) {
   const empName = localStorage.getItem('vfh_emp_name') || 'User';
   container.innerHTML = `
-    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 24px;">
-      <img src="logo.jpg" alt="KV FLASH" style="width: 140px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-      <div class="hero-title" style="text-align: center;">Welcome, ${empName}</div>
-      <div class="hero-subtitle" style="text-align: center;">KV FLASH Luxury Portal</div>
+    <div style="text-align: center; margin-bottom: 24px;">
+      <img src="logo.jpg" alt="KV FLASH" style="height: 60px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div class="hero-title" style="text-align: center; font-size: 16px;">Welcome, ${empName}</div>
     </div>
-    
-    <div class="setting-row" style="margin-bottom: 16px;">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">QUICK ACTIONS</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <button class="btn btn-primary" onclick="state.activeTab='sub_new_lead'; state.history.push('sub_new_lead'); renderView();">🚀 Log Lead</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); border: 1px solid var(--border);" onclick="state.activeTab='sub_profile'; state.history.push('sub_profile'); renderView();">👤 Profile</button>
+
+    <!-- Quick Shortcuts Row (Horizontal) -->
+    <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+      <button style="flex:1; padding: 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); text-align:center; color: var(--text-primary); outline: none; cursor:pointer;" onclick="state.activeTab='sub_emi_calculator'; state.history.push('sub_emi_calculator'); renderView();">
+        <div style="font-size: 20px;">🧮</div><div style="font-size:11px; margin-top:4px; font-weight: 600;">EMI Calc</div>
+      </button>
+      <button style="flex:1; padding: 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); text-align:center; color: var(--text-primary); outline: none; cursor:pointer;" onclick="state.activeTab='sub_irr_matrix'; state.history.push('sub_irr_matrix'); renderView();">
+        <div style="font-size: 20px;">📈</div><div style="font-size:11px; margin-top:4px; font-weight: 600;">Rate Matrix</div>
+      </button>
+      <button style="flex:1; padding: 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); text-align:center; color: var(--text-primary); outline: none; cursor:pointer;" onclick="state.activeTab='sub_approved_cars'; state.history.push('sub_approved_cars'); renderView();">
+        <div style="font-size: 20px;">🚗</div><div style="font-size:11px; margin-top:4px; font-weight: 600;">Vehicles</div>
+      </button>
+    </div>
+
+    <div class="list-header">ALERTS & TASKS</div>
+    <div class="list-group">
+      <div class="list-item" onclick="state.activeTab='sub_contacts'; state.history.push('sub_contacts'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">⚠️</div>
+          <div>
+            <div class="list-item-title" style="color: #EF4444;">Pending Approval</div>
+            <div class="list-item-subtitle">Jaguar XF - Ramesh K.</div>
+          </div>
+        </div>
+        <span class="chevron">›</span>
       </div>
-    </div>
-    
-    <div class="setting-row" style="margin-bottom: 16px;">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">DASHBOARD ALERTS</div>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <div style="padding: 12px; background: rgba(239, 68, 68, 0.1); border-left: 3px solid #EF4444; border-radius: 4px;">
-          <strong style="color: #EF4444; font-size: 13px;">Pending Case (URGENT)</strong>
-          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Jaguar XF approval pending for Ramesh K.</div>
+      <div class="list-item" onclick="state.activeTab='sub_contacts'; state.history.push('sub_contacts'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">✅</div>
+          <div>
+            <div class="list-item-title" style="color: var(--gold-primary);">Disbursed Today</div>
+            <div class="list-item-subtitle">2 cases completed</div>
+          </div>
         </div>
-        <div style="padding: 12px; background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--gold-primary); border-radius: 4px;">
-          <strong style="color: var(--gold-primary); font-size: 13px;">Recent Case Updates</strong>
-          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">2 cases successfully disbursed today.</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="setting-row">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">SHORTCUTS</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center;">
-        <div onclick="state.activeTab='sub_emi_calculator'; state.history.push('sub_emi_calculator'); renderView();" style="background: var(--surface); padding: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
-          <div style="font-size: 24px;">🧮</div>
-          <div style="font-size: 11px; margin-top: 6px; font-weight: 600;">EMI Calc</div>
-        </div>
-        <div onclick="state.activeTab='sub_irr_matrix'; state.history.push('sub_irr_matrix'); renderView();" style="background: var(--surface); padding: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
-          <div style="font-size: 24px;">📈</div>
-          <div style="font-size: 11px; margin-top: 6px; font-weight: 600;">Rate Matrix</div>
-        </div>
-        <div onclick="state.activeTab='sub_approved_cars'; state.history.push('sub_approved_cars'); renderView();" style="background: var(--surface); padding: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
-          <div style="font-size: 24px;">🚗</div>
-          <div style="font-size: 11px; margin-top: 6px; font-weight: 600;">Vehicle Search</div>
-        </div>
+        <span class="chevron">›</span>
       </div>
     </div>
   `;
@@ -959,27 +955,66 @@ function renderHomeScreen(container) {
 
 function renderFinanceScreen(container) {
   container.innerHTML = `
-    <div class="hero-card">
-      <div class="hero-title">Finance & Cases</div>
-      <div class="hero-subtitle">Manage all financial operations</div>
-    </div>
-    
-    <div class="setting-row" style="margin-top: 16px;">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">CUSTOMER CASES</div>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_new_lead'; state.history.push('sub_new_lead'); renderView();">➕ New Case</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_contacts'; state.history.push('sub_contacts'); renderView();">📂 Existing Cases & Details</button>
+    <div class="list-header">CUSTOMER CASES</div>
+    <div class="list-group">
+      <div class="list-item" onclick="state.activeTab='sub_new_lead'; state.history.push('sub_new_lead'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">➕</div>
+          <div>
+            <div class="list-item-title">New Case</div>
+            <div class="list-item-subtitle">Log a new customer inquiry</div>
+          </div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_contacts'; state.history.push('sub_contacts'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">📂</div>
+          <div>
+            <div class="list-item-title">Existing Cases & Details</div>
+            <div class="list-item-subtitle">Manage customer data and status</div>
+          </div>
+        </div>
+        <span class="chevron">›</span>
       </div>
     </div>
     
-    <div class="setting-row" style="margin-top: 16px;">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">FINANCIAL TOOLS</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_emi_calculator'; state.history.push('sub_emi_calculator'); renderView();">🧮 EMI Calculator</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_valuation_calculator'; state.history.push('sub_valuation_calculator'); renderView();">💰 Loan Calculator</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_irr_matrix'; state.history.push('sub_irr_matrix'); renderView();">📈 IRR Matrix</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_car_policy'; state.history.push('sub_car_policy'); renderView();">📑 Finance Policy</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_dsa_payout'; state.history.push('sub_dsa_payout'); renderView();">💸 DSA Payout</button>
+    <div class="list-header">FINANCIAL TOOLS</div>
+    <div class="list-group">
+      <div class="list-item" onclick="state.activeTab='sub_emi_calculator'; state.history.push('sub_emi_calculator'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">🧮</div>
+          <div class="list-item-title">EMI Calculator</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_valuation_calculator'; state.history.push('sub_valuation_calculator'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">💰</div>
+          <div class="list-item-title">Loan Calculator</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_irr_matrix'; state.history.push('sub_irr_matrix'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">📈</div>
+          <div class="list-item-title">IRR Matrix</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_car_policy'; state.history.push('sub_car_policy'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">📑</div>
+          <div class="list-item-title">Finance Policy</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_dsa_payout'; state.history.push('sub_dsa_payout'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">💸</div>
+          <div class="list-item-title">DSA Payout</div>
+        </div>
+        <span class="chevron">›</span>
       </div>
     </div>
   `;
@@ -987,26 +1022,60 @@ function renderFinanceScreen(container) {
 
 function renderToolsScreen(container) {
   container.innerHTML = `
-    <div class="hero-card">
-      <div class="hero-title">Master Tools & Grids</div>
-      <div class="hero-subtitle">Comprehensive lookup grids</div>
-    </div>
-    
-    <div class="setting-row" style="margin-top: 16px;">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">VEHICLE GRIDS</div>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_approved_cars'; state.history.push('sub_approved_cars'); renderView();">🚗 Approved Car Models</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_cv_grid'; state.history.push('sub_cv_grid'); renderView();">🚐 Commercial Vehicle (CV) Grid</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_car_policy'; state.history.push('sub_car_policy'); renderView();">📋 Vehicle Finance Policy</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_cv_policy'; state.history.push('sub_cv_policy'); renderView();">🚚 CV Finance Policy</button>
+    <div class="list-header">VEHICLE GRIDS</div>
+    <div class="list-group">
+      <div class="list-item" onclick="state.activeTab='sub_approved_cars'; state.history.push('sub_approved_cars'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">🚗</div>
+          <div class="list-item-title">Approved Car Models</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_cv_grid'; state.history.push('sub_cv_grid'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">🚐</div>
+          <div class="list-item-title">Commercial Vehicle (CV) Grid</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_car_policy'; state.history.push('sub_car_policy'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">📋</div>
+          <div class="list-item-title">Vehicle Finance Policy</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_cv_policy'; state.history.push('sub_cv_policy'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">🚚</div>
+          <div class="list-item-title">CV Finance Policy</div>
+        </div>
+        <span class="chevron">›</span>
       </div>
     </div>
     
-    <div class="setting-row" style="margin-top: 16px;">
-      <div style="font-size: 14px; font-weight: 700; color: var(--gold-primary); margin-bottom: 12px;">ALL TOOLS</div>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_dashboard'; state.history.push('sub_dashboard'); renderView();">📊 Legacy Executive Dashboard</button>
-        <button class="btn" style="background: var(--surface); color: var(--text-primary); text-align: left; padding: 12px; border: 1px solid var(--border);" onclick="state.activeTab='sub_favorites'; state.history.push('sub_favorites'); renderView();">⭐ Favorites & Saved Grids</button>
+    <div class="list-header">SETTINGS & PROFILE</div>
+    <div class="list-group">
+      <div class="list-item" onclick="state.activeTab='sub_profile'; state.history.push('sub_profile'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">👤</div>
+          <div class="list-item-title">My Profile</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_favorites'; state.history.push('sub_favorites'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">⭐</div>
+          <div class="list-item-title">Favorites & Saved</div>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="list-item" onclick="state.activeTab='sub_dashboard'; state.history.push('sub_dashboard'); renderView();">
+        <div class="list-item-content">
+          <div class="list-item-icon">📊</div>
+          <div class="list-item-title">Legacy Dashboard</div>
+        </div>
+        <span class="chevron">›</span>
       </div>
     </div>
   `;
