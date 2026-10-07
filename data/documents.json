@@ -1,0 +1,32 @@
+{
+  "datasetId": "documents",
+  "title": "Loan Documentation Checklist",
+  "category": "Docs",
+  "version": 1,
+  "lastUpdated": "2026-10-07",
+  "description": "Standard KYC, income, and asset proof checklists categorized by applicant profile and loan product",
+  "columns": [
+    { "key": "docName", "label": "Document Name", "type": "text", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 160 },
+    { "key": "profile", "label": "Profile Category", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 140 },
+    { "key": "docType", "label": "Document Type", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "isMandatory", "label": "Requirement", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 110 },
+    { "key": "specifications", "label": "Accepted Formats / Details", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 180 }
+  ],
+  "rows": [
+    { "docName": "PAN Card", "profile": "All Profiles", "docType": "Identity Proof", "isMandatory": "Mandatory", "specifications": "Original clear color copy / e-PAN" },
+    { "docName": "Aadhaar Card with XML/OTP", "profile": "All Profiles", "docType": "Address Proof", "isMandatory": "Mandatory", "specifications": "UIDAI mask copy or e-KYC authentication" },
+    { "docName": "Passport / Voter ID / DL", "profile": "All Profiles", "docType": "Secondary ID", "isMandatory": "Optional", "specifications": "Valid unexpired document copy" },
+    { "docName": "Salary Slips (Last 3 Months)", "profile": "Salaried", "docType": "Income Proof", "isMandatory": "Mandatory", "specifications": "Company stamped / digital digitally signed" },
+    { "docName": "Form 16 / 26AS (Last 2 Yrs)", "profile": "Salaried", "docType": "Income Proof", "isMandatory": "Mandatory", "specifications": "Part A & Part B with TRACES barcode" },
+    { "docName": "Salary Bank Statement (6 Months)", "profile": "Salaried", "docType": "Banking Proof", "isMandatory": "Mandatory", "specifications": "PDF statement direct from net banking" },
+    { "docName": "ITR with Computation (2 Yrs)", "profile": "Self Employed", "docType": "Income Proof", "isMandatory": "Mandatory", "specifications": "ITR V acknowledgement + CA audited Balance Sheet" },
+    { "docName": "GST Returns (GSTR 3B / 1)", "profile": "Self Employed", "docType": "Turnover Proof", "isMandatory": "Mandatory", "specifications": "Last 12 months filed returns portal export" },
+    { "docName": "Current Account Statement (1 Yr)", "profile": "Self Employed", "docType": "Banking Proof", "isMandatory": "Mandatory", "specifications": "E-statement of primary business operative account" },
+    { "docName": "Business Registration / MSME", "profile": "Self Employed", "docType": "Vintage Proof", "isMandatory": "Mandatory", "specifications": "Udyam Aadhar / Shop Act / Trade License" },
+    { "docName": "7/12 & 8A Land Records", "profile": "Farmer / Agri", "docType": "Income Proof", "isMandatory": "Mandatory", "specifications": "Digital land ownership record with cultivator crop details" },
+    { "docName": "Sugar Factory / Mandi Slips", "profile": "Farmer / Agri", "docType": "Income Proof", "isMandatory": "Optional", "specifications": "Last 12 months harvest payment slips" },
+    { "docName": "Board Resolution & MOA/AOA", "profile": "Private Ltd / LLP", "docType": "Entity Proof", "isMandatory": "Mandatory", "specifications": "Signed by Directors on Company letterhead" },
+    { "docName": "Vehicle Quotation / Proforma", "profile": "All Profiles", "docType": "Asset Proof", "isMandatory": "Mandatory", "specifications": "Authorized dealer quote with breakup of taxes" },
+    { "docName": "Existing RC + Valuation Report", "profile": "Used Car / Used CV", "docType": "Asset Proof", "isMandatory": "Mandatory", "specifications": "Original smart card RC + approved agency physical inspection" }
+  ]
+}
