@@ -6,6 +6,7 @@
 // Global App State
 const state = {
   activeTab: 'dashboard',
+  history: ['dashboard'],
   searchQuery: '',
   searchFilter: 'ALL',
   favorites: JSON.parse(localStorage.getItem('vfh_favorites') || '[]'),
@@ -779,12 +780,14 @@ function renderView() {
   const headerTabs = document.getElementById('header-tabs');
   const searchSection = document.querySelector('.search-section');
   const topActions = document.querySelector('.top-actions');
+  const androidNav = document.getElementById('android-nav');
   
   if (loggedInId !== 'KV0001') {
     // Lock the app
     if (headerTabs) headerTabs.style.display = 'none';
     if (searchSection) searchSection.style.display = 'none';
     if (topActions) topActions.style.visibility = 'hidden';
+    if (androidNav) androidNav.style.display = 'none';
     
     renderLoginScreen(main);
     return;
@@ -794,6 +797,7 @@ function renderView() {
   if (headerTabs) headerTabs.style.display = 'flex';
   if (searchSection) searchSection.style.display = 'block';
   if (topActions) topActions.style.visibility = 'visible';
+  if (androidNav) androidNav.style.display = 'flex';
 
   // If in global search mode
   if (state.searchQuery.trim().length > 0) {
@@ -4211,7 +4215,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('header-tabs').addEventListener('click', (e) => {
     const tabBtn = e.target.closest('.tab-item');
     if (tabBtn) {
-      state.activeTab = tabBtn.getAttribute('data-tab');
+      const newTab = tabBtn.getAttribute('data-tab');
+      if (state.activeTab !== newTab) {
+        state.history.push(newTab);
+        state.activeTab = newTab;
+      }
       state.searchQuery = '';
       document.getElementById('global-search-input').value = '';
       document.getElementById('btn-clear-search').style.display = 'none';
@@ -4232,7 +4240,38 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-logout-shortcut')?.addEventListener('click', () => {
     localStorage.removeItem('vfh_auth_id');
     state.activeTab = 'dashboard';
+    state.history = ['dashboard'];
     renderView();
+  });
+
+  // Android Navigation Bar Listeners
+  document.getElementById('nav-back')?.addEventListener('click', () => {
+    if (state.history.length > 1) {
+      state.history.pop();
+      state.activeTab = state.history[state.history.length - 1];
+    } else {
+      state.activeTab = 'dashboard';
+    }
+    renderView();
+  });
+
+  document.getElementById('nav-home')?.addEventListener('click', () => {
+    if (state.activeTab !== 'dashboard') {
+      state.history.push('dashboard');
+      state.activeTab = 'dashboard';
+      renderView();
+    }
+  });
+
+  document.getElementById('nav-recent')?.addEventListener('click', () => {
+    // Recent acts as App Switcher (Scroll header into view or toggle search)
+    const headerTabs = document.getElementById('header-tabs');
+    if (headerTabs) {
+      headerTabs.scrollIntoView({ behavior: 'smooth' });
+      // Brief highlight effect on tabs
+      headerTabs.style.boxShadow = '0 0 20px var(--gold-primary)';
+      setTimeout(() => headerTabs.style.boxShadow = 'none', 1000);
+    }
   });
 
   // Global Search Input (250ms debounced)
