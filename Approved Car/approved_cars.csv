@@ -1,0 +1,55 @@
+S No,Status,OEM,Asset,Max Owner Permitted,Segment,Fuel Type,Financing Remarks
+1,Approved,Honda,Honda Amaze,Up to 4th Owner,Sedan,Petrol / Diesel / CNG,Personal & Commercial
+2,Approved,Honda,Honda City,Up to 4th Owner,Sedan,Petrol / Diesel,Personal & Commercial
+3,Approved,Honda,Honda WR-V,Up to 4th Owner,Compact SUV,Petrol / Diesel,Personal Only
+4,Approved,Hyundai,Hyundai Aura,Up to 4th Owner,Sedan,Petrol / CNG,Personal & Commercial
+5,Approved,Hyundai,Hyundai Creta,Up to 4th Owner,SUV,Petrol / Diesel,Personal Only
+6,Approved,Hyundai,Hyundai Grand I 10,Up to 4th Owner,Hatchback,Petrol / CNG,Personal & Commercial
+7,Approved,Hyundai,Hyundai I 10,Up to 4th Owner,Hatchback,Petrol,Personal Only
+8,Approved,Hyundai,Hyundai I 20,Up to 4th Owner,Premium Hatchback,Petrol / Diesel,Personal Only
+9,Approved,Hyundai,Hyundai Venue,Up to 4th Owner,Compact SUV,Petrol / Diesel,Personal Only
+10,Approved,Hyundai,Hyundai Verna,Up to 4th Owner,Sedan,Petrol / Diesel,Personal Only
+11,Approved,Hyundai,Hyundai Xcent,Up to 4th Owner,Sedan,Petrol / CNG,Personal & Commercial
+12,Approved,Jeep,Jeep Compass,Up to 4th Owner,Premium SUV,Petrol / Diesel,Personal Only
+13,Approved,Kia,Kia Seltos,Up to 4th Owner,SUV,Petrol / Diesel,Personal Only
+14,Approved,Kia,Kia Sonet,Up to 4th Owner,Compact SUV,Petrol / Diesel,Personal Only
+15,Approved,Mahindra,Mahindra Bolero,Up to 5th Owner,MUV / Utility,Diesel,Personal & Commercial
+16,Approved,Mahindra,Mahindra Scorpio S 10,Up to 4th Owner,SUV,Diesel,Personal & Commercial
+17,Approved,Mahindra,Mahindra Scorpio S 11,Up to 4th Owner,SUV,Diesel,Personal & Commercial
+18,Approved,Mahindra,Mahindra Thar,Up to 4th Owner,Lifestyle 4x4 SUV,Petrol / Diesel,Personal Only
+19,Approved,Mahindra,Mahindra XUV 300,Up to 4th Owner,Compact SUV,Petrol / Diesel,Personal Only
+20,Approved,Maruti,Maruti Alto,Up to 4th Owner,Hatchback,Petrol / CNG,Personal Only
+21,Approved,Maruti,Maruti Alto 800,Up to 4th Owner,Hatchback,Petrol / CNG,Personal Only
+22,Approved,Maruti,Maruti Alto K 10,Up to 4th Owner,Hatchback,Petrol / CNG,Personal Only
+23,Approved,Maruti,Maruti Baleno,Up to 4th Owner,Premium Hatchback,Petrol / CNG,Personal Only
+24,Approved,Maruti,Maruti Celerio,Up to 4th Owner,Hatchback,Petrol / CNG,Personal Only
+25,Approved,Maruti,Maruti Ciaz,Up to 4th Owner,Sedan,Petrol / Diesel / Smart Hybrid,Personal & Commercial
+26,Approved,Maruti,Maruti Eeco,Up to 4th Owner,Van / Commercial,Petrol / CNG,Personal & Commercial
+27,Approved,Maruti,Maruti Ertiga,Up to 4th Owner,MUV,Petrol / CNG,Personal & Commercial
+28,Approved,Maruti,Maruti Ignis,Up to 4th Owner,Hatchback,Petrol,Personal Only
+29,Approved,Maruti,Maruti Omni,Up to 4th Owner,Van,Petrol / LPG,Personal & Commercial
+30,Approved,Maruti,Maruti S Cross,Up to 4th Owner,Crossover SUV,Petrol / Diesel,Personal Only
+31,Approved,Maruti,Maruti S-Presso,Up to 4th Owner,Mini SUV / Hatchback,Petrol / CNG,Personal Only
+32,Approved,Maruti,Maruti Swift,Up to 4th Owner,Hatchback,Petrol / CNG / Diesel,Personal & Commercial
+33,Approved,Maruti,Maruti Swift Dzire,Up to 4th Owner,Sedan,Petrol / CNG / Diesel,Personal & Commercial
+34,Approved,Maruti,Maruti Vitara Brezza,Up to 4th Owner,Compact SUV,Petrol / Diesel,Personal Only
+35,Approved,Maruti,Maruti Wagon R,Up to 4th Owner,Tallboy Hatchback,Petrol / CNG,Personal & Commercial
+36,Approved,Maruti,Maruti XL 6,Up to 4th Owner,Premium MUV,Petrol / CNG,Personal Only
+37,Approved,Renault,Renault Kwid,Up to 4th Owner,Hatchback,Petrol,Personal Only
+38,Approved,Tata,Tata Altroz,Up to 4th Owner,Premium Hatchback,Petrol / Diesel / CNG,Personal Only
+39,Approved,Tata,Tata Bolt,Up to 4th Owner,Hatchback,Petrol / Diesel,Personal Only
+40,Approved,Tata,Tata Harrier,Up to 4th Owner,SUV,Diesel,Personal Only
+41,Approved,Tata,Tata Hexa,Up to 4th Owner,Premium MUV / SUV,Diesel,Personal Only
+42,Approved,Tata,Tata Nexon,Up to 4th Owner,Compact SUV,Petrol / Diesel / EV,Personal Only
+43,Approved,Tata,Tata Tiago,Up to 4th Owner,Hatchback,Petrol / CNG / EV,Personal Only
+44,Approved,Toyota,Toyota Fortuner,Up to 4th Owner,Premium SUV,Petrol / Diesel,Personal Only
+45,Approved,Toyota,Toyota Glanza,Up to 4th Owner,Hatchback,Petrol / CNG,Personal Only
+46,Approved,Toyota,Toyota Innova,Up to 4th Owner,MUV,Diesel / Petrol,Personal & Commercial
+47,Approved,Toyota,Toyota Innova Crysta,Up to 4th Owner,Premium MUV,Diesel / Petrol,Personal & Commercial
+48,Approved,Toyota,Toyota Urban Cruiser,Up to 4th Owner,Compact SUV,Petrol,Personal Only
+49,Approved,Mahindra,Mahindra XUV 700,Up to 4th Owner,Premium SUV,Petrol / Diesel,Personal Only
+50,Approved,Tata,Tata Punch,Up to 4th Owner,Micro SUV,Petrol / CNG / EV,Personal Only
+51,Approved,Toyota,Toyota Hyryder,Up to 4th Owner,Hybrid SUV,Petrol / Strong Hybrid,Personal Only
+52,Approved,Mahindra,Mahindra Scorpio N,Up to 4th Owner,SUV,Petrol / Diesel,Personal Only
+53,Approved,Tata,Tata Tigor,Up to 4th Owner,Sedan,Petrol / CNG / EV,Personal & Commercial
+54,Approved,Toyota,Etios (For commercial use only),Up to 4th Owner,Sedan,Petrol / Diesel,For commercial use only

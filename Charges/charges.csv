@@ -1,0 +1,8 @@
+S.No,Description,Charges,Applicability,Category
+1,"Processing Fees","1.25% + GST (1.50% + GST For Tractor Loan)","Standard Car & CV: 1.25% + GST; Tractor: 1.50% + GST","Processing"
+2,"Document Charges","Upto 5 Lac 1000/- Above 5 Lac 2000/- Per Loan Account","Loan <= 5L: Rs 1000 | Loan > 5L: Rs 2000","Documentation"
+3,"Valuation Charges (Car & SCV)","Rs. 1000/-","Private Cars & Small Commercial Vehicles (SCV)","Valuation"
+4,"Valuation Charges (LCV / ICV)","Rs. 1200/-","Light & Intermediate Commercial Vehicles","Valuation"
+5,"Valuation Charges (M & HCV, Tractor)","Rs. 1500/-","Medium & Heavy Commercial Vehicles & Tractors","Valuation"
+6,"Stamp duty charges","0.60% of Loan Account","0.60% of sanctioned loan amount","Statutory"
+7,"Welcome Letter and Repayment Schedule","Free / Nil","Complimentary kit upon disbursal","Service"

@@ -1,0 +1,35 @@
+S.No,Policy Parameter,Policy Norm (Aug 2024),Previous Norm (Jul 2023),Credit Rationale
+1,"Max Funding: M&HCV (New & Used, Non-Tipper)",CAT A1 (Captive Large): ₹ 75L | CAT A2 (Captive Small): ₹ 35L or 1 veh | CAT B: ₹ 100L | CAT C: ₹ 75L | CAT D: ₹ 40L | CAT E (FTB): ₹ 35L or 1 veh | CAT F (FTU): ₹ 30L or 1 veh,CAT A1: ₹ 50L | CAT A2: ₹ 25L (1 veh) | CAT B: ₹ 100L | CAT C: ₹ 60L | CAT D: ₹ 35L | CAT E: ₹ 30L (1 veh) | CAT F: ₹ 25L (1 veh),New vehicle cost inflation in past 2 years increased secondary market prices. Capping increased to ensure fast TAT and regional level approvals.
+2,Max Funding: LCV (New & Used),CAT A1 (Captive Large): ₹ 40L | CAT A2 (Captive Small): ₹ 25L | CAT B: ₹ 100L | CAT C: ₹ 50L | CAT D: ₹ 35L | CAT E: ₹ 25L or 1 veh | CAT F: ₹ 22L or 1 veh,CAT A1: ₹ 40L | CAT A2: ₹ 22L | CAT B: ₹ 75L | CAT C: ₹ 40L | CAT D: ₹ 25L | CAT E: ₹ 22L (1 veh) | CAT F: ₹ 20L (1 veh),Enhanced regional capping to accommodate commercial vehicle price escalation and improve turnaround time.
+3,Max Funding: SCV (New & Used),CAT A1 (Captive Large): ₹ 25L | CAT A2 (Captive Small): ₹ 12L or 1 veh | CAT B: ₹ 50L | CAT C: ₹ 40L | CAT D: ₹ 25L | CAT E: ₹ 12L or 1 veh | CAT F: ₹ 10L or 1 veh,CAT A1: ₹ 25L | CAT A2: ₹ 12L (1 veh) | CAT B: ₹ 50L | CAT C: ₹ 25L | CAT D: ₹ 18L | CAT E: ₹ 12L (1 veh) | CAT F: ₹ 10L (1 veh),Adjusted funding limits for SCV category across Small/Medium fleet operators.
+4,Max Funding: Tipper (New & Used),CAT A1 (Captive Large): ₹ 60L | CAT A2 (Captive Small): ₹ 35L or 1 veh | CAT B: ₹ 100L | CAT C: ₹ 60L | CAT D: ₹ 45L or 1 veh | CAT E: ₹ 30L or 1 veh,CAT A1: ₹ 50L | CAT A2: ₹ 25L (1 veh) | CAT B: ₹ 100L | CAT C: ₹ 50L | CAT D: ₹ 35L (1 veh) | CAT E: ₹ 25L (1 veh),Tipper price escalation addressed with higher regional approval caps.
+5,Max Funding: School / College Bus (New LCV Bus),Category A (>1000 Students): ₹ 100 Lacs | Category B (500-1000 Students): ₹ 75 Lacs | Category C (<500 Students): ₹ 30 Lacs or 1 Bus,Category A: ₹ 100L | Category B: ₹ 50L | Category C: ₹ 20L or 1 Bus,Expanded funding support for educational institutions and student fleet transport.
+6,"Max Funding: Commercial Bus (HCV, LCV, SCV - Non-School)",CAT B: ₹ 100 Lacs | CAT C: ₹ 80 Lacs | CAT D: ₹ 40 Lacs | CAT E: ₹ 35 Lacs or 1 Bus,CAT B: ₹ 100L | CAT C: ₹ 75L | CAT D: ₹ 35L | CAT E: ₹ 30L or 1 Bus,Enhanced fleet funding for intercity and route permit bus operators.
+7,Fast Track Tatkal Screen (Used CV Funding),"• No funding on Trailers under Tatkal
+• Tippers up to 28 Tons only: Max ₹ 25 Lacs
+• ICV funding restricted to 12 Ton segment: Max ₹ 15 Lacs
+• LTV: CAT E = 75%, CAT F = 70%
+• External Guarantor with property ownership acceptable","₹ 20L on Trailers/M&HCV/Tippers, ₹ 15L on LCV/ICV; LTV: CAT E = 70%, CAT F = 65%",Risk mitigation on heavy trailers and high-tonnage tippers under Tatkal expedited scheme.
+8,Fast Track Tatkal Eligibility & LTV Booster,CIBIL Score > 730 + Property ownership as per norms + Property Market Value >= 2 times of loan amount.,5% Additional LTV if any one of conditions satisfied for FTB/FTU.,Quality customer onboarding under Tatkal program.
+9,Approval Authority: Branch Level (BCM + Branch Head),New & Used: Up to ₹ 100 Lacs (Recommended by Branch Credit Manager & Approved by Branch Head),New & Used: Up to ₹ 20 Lacs,Exposure approval @ Branch Level only for better TAT and customer service.
+10,Approval Authority: Regional Level (RCM + Regional Head),Nil (Decentralized to Branch Head up to ₹ 100 Lacs),New: ₹ 50 Lacs & Used: ₹ 50 Lacs,Streamlined approval matrix and reduction in regional TAT bottlenecks.
+11,SAHAJ SCHEME (Credit Bureau Score 450 - 549),Only Regions with overall Delinquency < 15% are eligible. Bureau score: 450 - 549. Max funding: ₹ 25 Lacs.,CIBIL score < 670 and > 450 under Sahaj. Bureau score: 450 - 549. Max: ₹ 25 Lacs.,Incentive for branches to maintain delinquency below 15% and strict portfolio risk control.
+12,Tipper LTV Norms (> 10 Year Old Vehicles),For > 10 year old tippers at time of funding: CAT A2 = 70% | CAT D = 80% | CAT E = 73%,CAT A2 = 75% | CAT D = 85% | CAT E = 78%,Mitigate asset risk and depreciation on older tipper models.
+13,Retail School Bus: Eligible Asset Range,HCV Buses included (alongside all LCV & SCV types),All LCV and SCV types only,To increase the scope of getting new institutional school bus customers.
+14,Branch RC Limit Cap,"• Branch Category A: 15 Nos / ₹ 100 Lacs (whichever earlier)
+• Branch Category B: 12 Nos / ₹ 75 Lacs (whichever earlier)
+• Branch Category C: 10 Nos / ₹ 50 Lacs (whichever earlier)",Branch A: 10 Nos / ₹ 75L | Branch B: 7 Nos / ₹ 50L | Branch C: 5 Nos / ₹ 30L,Potential to increase overall business sourcing volume.
+15,Loan to Value (LTV) Calculation Base,To be considered on LOWER of Grid / Valuation and Purchase Cost.,To be considered on lower of Grid / Valuation.,Prudent risk management and preventing asset over-invoicing.
+16,Residence Stability & Property Proof Norm,"For funding up to ₹ 8.00 Lakhs, electricity bill can be accepted as property proof.","For funding up to ₹ 5.00 Lakhs, electricity bill can be accepted.",Simplified documentation benchmark for loans up to ₹ 8 Lakhs.
+17,CIBIL / Credit Bureau Overdue Mitigation,"Bureau default must be cleared and mitigated by ANY ONE of:
+1. 10% lower LTV
+2. External Guarantor with property value > loan amount
+3. 20% IRR
+4. House/commercial property ownership in applicant/co-app name equal to 2x loan amount
+5. Vehicle collateral equivalent to loan amount",Overdue to be cleared and proof to be documented.,Stricter risk mitigation framework for CIBIL overdue observations.
+18,"CV Asset Level Categorisation (Level 1, 2, 3)","• Level 1: Good resale & widely used
+• Level 2: Moderate resale & usage (LTV cut by 5%)
+• Level 3: Low resale / specialized usage (LTV cut by 10%; CAT A-Small, CAT E, CAT F NOT eligible; CAT D eligible only with existing Level 3 ownership)
+• LTV cuts not applicable to CAT A-Large & CAT B
+• Unlisted models default to Level 3",Standard unclassified asset norms,To ensure controlled exposure on high-liquidity vs specialized qualitative assets.
+19,Corporate DSA Exposure Limit,Limit is capped at ₹ 500 Lacs (₹ 5.00 Crores),Limits - ₹ 100 Lacs,Accommodating corporate DSAs operating across multiple States.

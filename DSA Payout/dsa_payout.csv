@@ -1,0 +1,13 @@
+Product Segment,WIRR / IRR Slab,Monthly Vol < 20L,Monthly Vol > 20L,Product Coverage & Notes
+Used Car,>= 16.00% - <= 16.99%,2.00%,2.25%,Private Car Refinance / Purchase
+Used Car,>= 17.00% - <= 17.99%,2.50%,2.75%,Private Car Refinance / Purchase
+Used Car,>= 18.00% - <= 18.99%,3.00%,3.25%,Private Car Refinance / Purchase
+Used Car,>= 19.00% - <= 19.99%,3.25%,3.50%,Private Car Refinance / Purchase
+Used Car,>= 20.00% - <= 20.99%,3.50%,3.75%,Private Car Refinance / Purchase
+Used Car,>= 21.00% - <= 21.99%,3.75%,4.00%,Private Car Refinance / Purchase
+Used Car,>= 22.00%,4.00%,4.25%,Private Car Refinance / Purchase
+Used CV,>= 16.00% - <= 17.99%,1.50%,2.00%,"SCV, LCV, ICV, Buses & Pickups"
+Used CV,>= 18.00% - <= 18.99%,2.00%,2.25%,"SCV, LCV, ICV, Buses & Pickups"
+Used CV,>= 19.00% - <= 19.99%,2.50%,2.50%,"SCV, LCV, ICV, Buses & Pickups"
+Used CV,>= 20.00%,3.00%,3.00%,"SCV, LCV, ICV, Buses & Pickups"
+M&HCV & CE,Flat Volume Rate,1.25%,1.25%,Flat 1.25% on volume across all IRR slabs

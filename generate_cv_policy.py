@@ -1,0 +1,203 @@
+import json
+import csv
+
+cv_policy_data = {
+  "datasetId": "cv_policy",
+  "title": "Commercial Vehicle (CV) Policy (2024-25)",
+  "category": "Policy",
+  "version": 2,
+  "lastUpdated": "2024-08-01",
+  "description": "Regional Commercial Vehicle Credit Policy Norms as of August 2024 (DOC-2024-25)",
+  "columns": [
+    { "key": "sNo", "label": "S.No", "type": "number", "isPrimary": False, "isSortable": True, "isFilterable": False, "widthDp": 60 },
+    { "key": "parameter", "label": "Policy Parameter", "type": "text", "isPrimary": True, "isSortable": True, "isFilterable": True, "widthDp": 200 },
+    { "key": "activeNorm", "label": "Policy Norm (Aug 2024)", "type": "text", "isPrimary": True, "isSortable": False, "isFilterable": False, "widthDp": 280 },
+    { "key": "previousNorm", "label": "Previous Norm (Jul 2023)", "type": "text", "isPrimary": False, "isSortable": False, "isFilterable": False, "widthDp": 220 },
+    { "key": "rationale", "label": "Credit Rationale", "type": "text", "isPrimary": False, "isSortable": False, "isFilterable": True, "widthDp": 220 }
+  ],
+  "rows": [
+    {
+      "sNo": 1,
+      "parameter": "Max Funding: M&HCV (New & Used, Non-Tipper)",
+      "activeNorm": "CAT A1 (Captive Large): ₹ 75L | CAT A2 (Captive Small): ₹ 35L or 1 veh | CAT B: ₹ 100L | CAT C: ₹ 75L | CAT D: ₹ 40L | CAT E (FTB): ₹ 35L or 1 veh | CAT F (FTU): ₹ 30L or 1 veh",
+      "previousNorm": "CAT A1: ₹ 50L | CAT A2: ₹ 25L (1 veh) | CAT B: ₹ 100L | CAT C: ₹ 60L | CAT D: ₹ 35L | CAT E: ₹ 30L (1 veh) | CAT F: ₹ 25L (1 veh)",
+      "rationale": "New vehicle cost inflation in past 2 years increased secondary market prices. Capping increased to ensure fast TAT and regional level approvals."
+    },
+    {
+      "sNo": 2,
+      "parameter": "Max Funding: LCV (New & Used)",
+      "activeNorm": "CAT A1 (Captive Large): ₹ 40L | CAT A2 (Captive Small): ₹ 25L | CAT B: ₹ 100L | CAT C: ₹ 50L | CAT D: ₹ 35L | CAT E: ₹ 25L or 1 veh | CAT F: ₹ 22L or 1 veh",
+      "previousNorm": "CAT A1: ₹ 40L | CAT A2: ₹ 22L | CAT B: ₹ 75L | CAT C: ₹ 40L | CAT D: ₹ 25L | CAT E: ₹ 22L (1 veh) | CAT F: ₹ 20L (1 veh)",
+      "rationale": "Enhanced regional capping to accommodate commercial vehicle price escalation and improve turnaround time."
+    },
+    {
+      "sNo": 3,
+      "parameter": "Max Funding: SCV (New & Used)",
+      "activeNorm": "CAT A1 (Captive Large): ₹ 25L | CAT A2 (Captive Small): ₹ 12L or 1 veh | CAT B: ₹ 50L | CAT C: ₹ 40L | CAT D: ₹ 25L | CAT E: ₹ 12L or 1 veh | CAT F: ₹ 10L or 1 veh",
+      "previousNorm": "CAT A1: ₹ 25L | CAT A2: ₹ 12L (1 veh) | CAT B: ₹ 50L | CAT C: ₹ 25L | CAT D: ₹ 18L | CAT E: ₹ 12L (1 veh) | CAT F: ₹ 10L (1 veh)",
+      "rationale": "Adjusted funding limits for SCV category across Small/Medium fleet operators."
+    },
+    {
+      "sNo": 4,
+      "parameter": "Max Funding: Tipper (New & Used)",
+      "activeNorm": "CAT A1 (Captive Large): ₹ 60L | CAT A2 (Captive Small): ₹ 35L or 1 veh | CAT B: ₹ 100L | CAT C: ₹ 60L | CAT D: ₹ 45L or 1 veh | CAT E: ₹ 30L or 1 veh",
+      "previousNorm": "CAT A1: ₹ 50L | CAT A2: ₹ 25L (1 veh) | CAT B: ₹ 100L | CAT C: ₹ 50L | CAT D: ₹ 35L (1 veh) | CAT E: ₹ 25L (1 veh)",
+      "rationale": "Tipper price escalation addressed with higher regional approval caps."
+    },
+    {
+      "sNo": 5,
+      "parameter": "Max Funding: School / College Bus (New LCV Bus)",
+      "activeNorm": "Category A (>1000 Students): ₹ 100 Lacs | Category B (500-1000 Students): ₹ 75 Lacs | Category C (<500 Students): ₹ 30 Lacs or 1 Bus",
+      "previousNorm": "Category A: ₹ 100L | Category B: ₹ 50L | Category C: ₹ 20L or 1 Bus",
+      "rationale": "Expanded funding support for educational institutions and student fleet transport."
+    },
+    {
+      "sNo": 6,
+      "parameter": "Max Funding: Commercial Bus (HCV, LCV, SCV - Non-School)",
+      "activeNorm": "CAT B: ₹ 100 Lacs | CAT C: ₹ 80 Lacs | CAT D: ₹ 40 Lacs | CAT E: ₹ 35 Lacs or 1 Bus",
+      "previousNorm": "CAT B: ₹ 100L | CAT C: ₹ 75L | CAT D: ₹ 35L | CAT E: ₹ 30L or 1 Bus",
+      "rationale": "Enhanced fleet funding for intercity and route permit bus operators."
+    },
+    {
+      "sNo": 7,
+      "parameter": "Fast Track Tatkal Screen (Used CV Funding)",
+      "activeNorm": "• No funding on Trailers under Tatkal\n• Tippers up to 28 Tons only: Max ₹ 25 Lacs\n• ICV funding restricted to 12 Ton segment: Max ₹ 15 Lacs\n• LTV: CAT E = 75%, CAT F = 70%\n• External Guarantor with property ownership acceptable",
+      "previousNorm": "₹ 20L on Trailers/M&HCV/Tippers, ₹ 15L on LCV/ICV; LTV: CAT E = 70%, CAT F = 65%",
+      "rationale": "Risk mitigation on heavy trailers and high-tonnage tippers under Tatkal expedited scheme."
+    },
+    {
+      "sNo": 8,
+      "parameter": "Fast Track Tatkal Eligibility & LTV Booster",
+      "activeNorm": "CIBIL Score > 730 + Property ownership as per norms + Property Market Value >= 2 times of loan amount.",
+      "previousNorm": "5% Additional LTV if any one of conditions satisfied for FTB/FTU.",
+      "rationale": "Quality customer onboarding under Tatkal program."
+    },
+    {
+      "sNo": 9,
+      "parameter": "Approval Authority: Branch Level (BCM + Branch Head)",
+      "activeNorm": "New & Used: Up to ₹ 100 Lacs (Recommended by Branch Credit Manager & Approved by Branch Head)",
+      "previousNorm": "New & Used: Up to ₹ 20 Lacs",
+      "rationale": "Exposure approval @ Branch Level only for better TAT and customer service."
+    },
+    {
+      "sNo": 10,
+      "parameter": "Approval Authority: Regional Level (RCM + Regional Head)",
+      "activeNorm": "Nil (Decentralized to Branch Head up to ₹ 100 Lacs)",
+      "previousNorm": "New: ₹ 50 Lacs & Used: ₹ 50 Lacs",
+      "rationale": "Streamlined approval matrix and reduction in regional TAT bottlenecks."
+    },
+    {
+      "sNo": 11,
+      "parameter": "SAHAJ SCHEME (Credit Bureau Score 450 - 549)",
+      "activeNorm": "Only Regions with overall Delinquency < 15% are eligible. Bureau score: 450 - 549. Max funding: ₹ 25 Lacs.",
+      "previousNorm": "CIBIL score < 670 and > 450 under Sahaj. Bureau score: 450 - 549. Max: ₹ 25 Lacs.",
+      "rationale": "Incentive for branches to maintain delinquency below 15% and strict portfolio risk control."
+    },
+    {
+      "sNo": 12,
+      "parameter": "Tipper LTV Norms (> 10 Year Old Vehicles)",
+      "activeNorm": "For > 10 year old tippers at time of funding: CAT A2 = 70% | CAT D = 80% | CAT E = 73%",
+      "previousNorm": "CAT A2 = 75% | CAT D = 85% | CAT E = 78%",
+      "rationale": "Mitigate asset risk and depreciation on older tipper models."
+    },
+    {
+      "sNo": 13,
+      "parameter": "Retail School Bus: Eligible Asset Range",
+      "activeNorm": "HCV Buses included (alongside all LCV & SCV types)",
+      "previousNorm": "All LCV and SCV types only",
+      "rationale": "To increase the scope of getting new institutional school bus customers."
+    },
+    {
+      "sNo": 14,
+      "parameter": "Branch RC Limit Cap",
+      "activeNorm": "• Branch Category A: 15 Nos / ₹ 100 Lacs (whichever earlier)\n• Branch Category B: 12 Nos / ₹ 75 Lacs (whichever earlier)\n• Branch Category C: 10 Nos / ₹ 50 Lacs (whichever earlier)",
+      "previousNorm": "Branch A: 10 Nos / ₹ 75L | Branch B: 7 Nos / ₹ 50L | Branch C: 5 Nos / ₹ 30L",
+      "rationale": "Potential to increase overall business sourcing volume."
+    },
+    {
+      "sNo": 15,
+      "parameter": "Loan to Value (LTV) Calculation Base",
+      "activeNorm": "To be considered on LOWER of Grid / Valuation and Purchase Cost.",
+      "previousNorm": "To be considered on lower of Grid / Valuation.",
+      "rationale": "Prudent risk management and preventing asset over-invoicing."
+    },
+    {
+      "sNo": 16,
+      "parameter": "Residence Stability & Property Proof Norm",
+      "activeNorm": "For funding up to ₹ 8.00 Lakhs, electricity bill can be accepted as property proof.",
+      "previousNorm": "For funding up to ₹ 5.00 Lakhs, electricity bill can be accepted.",
+      "rationale": "Simplified documentation benchmark for loans up to ₹ 8 Lakhs."
+    },
+    {
+      "sNo": 17,
+      "parameter": "CIBIL / Credit Bureau Overdue Mitigation",
+      "activeNorm": "Bureau default must be cleared and mitigated by ANY ONE of:\n1. 10% lower LTV\n2. External Guarantor with property value > loan amount\n3. 20% IRR\n4. House/commercial property ownership in applicant/co-app name equal to 2x loan amount\n5. Vehicle collateral equivalent to loan amount",
+      "previousNorm": "Overdue to be cleared and proof to be documented.",
+      "rationale": "Stricter risk mitigation framework for CIBIL overdue observations."
+    },
+    {
+      "sNo": 18,
+      "parameter": "CV Asset Level Categorisation (Level 1, 2, 3)",
+      "activeNorm": "• Level 1: Good resale & widely used\n• Level 2: Moderate resale & usage (LTV cut by 5%)\n• Level 3: Low resale / specialized usage (LTV cut by 10%; CAT A-Small, CAT E, CAT F NOT eligible; CAT D eligible only with existing Level 3 ownership)\n• LTV cuts not applicable to CAT A-Large & CAT B\n• Unlisted models default to Level 3",
+      "previousNorm": "Standard unclassified asset norms",
+      "rationale": "To ensure controlled exposure on high-liquidity vs specialized qualitative assets."
+    },
+    {
+      "sNo": 19,
+      "parameter": "Corporate DSA Exposure Limit",
+      "activeNorm": "Limit is capped at ₹ 500 Lacs (₹ 5.00 Crores)",
+      "previousNorm": "Limits - ₹ 100 Lacs",
+      "rationale": "Accommodating corporate DSAs operating across multiple States."
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. Policy Amendment Identification",
+      "summary": "Regional Commercial Vehicle Credit Policy Norms — DOC-2024-25 (Effective August 2024).",
+      "items": [
+        "Scope: Full credit parameters for M&HCV, LCV, SCV, Tippers, Commercial Buses, and School Buses.",
+        "Branch Delegation: Approval authority up to ₹ 100 Lacs delegated directly to Branch Credit Manager & Branch Head.",
+        "Corporate DSA Capping: Expanded to ₹ 500 Lacs across multi-state sourcing partners."
+      ]
+    },
+    {
+      "title": "2. Asset Level Categorisation & Underwriting Cuts",
+      "summary": "Risk classification of vehicle assets based on secondary market liquidity and demand:",
+      "items": [
+        "Level 1 Asset: High liquidity & wide market demand (Standard LTV).",
+        "Level 2 Asset: Moderate resale value & usage (5% LTV reduction applied).",
+        "Level 3 Asset: Low resale / specialized application (10% LTV reduction; CAT A-Small, CAT E, CAT F barred; CAT D requires prior ownership).",
+        "LTV cuts for Level 2 & 3 are waived for CAT A (Large) and CAT B clients.",
+        "Any unlisted vehicle model defaults to Level 3 classification."
+      ]
+    },
+    {
+      "title": "3. Credit Bureau (CIBIL) Default Mitigation Rules",
+      "summary": "Mandatory mitigation options if default/overdue appears in applicant bureau report:",
+      "items": [
+        "Option A: 10% reduction in applicable LTV norm.",
+        "Option B: External Guarantor with property value exceeding proposed loan amount.",
+        "Option C: Price loan at 20% minimum IRR.",
+        "Option D: Owned residential/commercial property in applicant/co-app name valued at >= 2x loan amount.",
+        "Option E: Additional vehicle collateral equal to loan amount."
+      ]
+    }
+  ]
+}
+
+# Write JSON to app assets
+with open("app/src/main/assets/data/cv_policy.json", "w", encoding="utf-8") as f:
+    json.dump(cv_policy_data, f, indent=2, ensure_ascii=False)
+
+# Write JSON to Cv Policy/
+with open("Cv Policy/cv_policy.json", "w", encoding="utf-8") as f:
+    json.dump(cv_policy_data, f, indent=2, ensure_ascii=False)
+
+# Write CSV to Cv Policy/
+with open("Cv Policy/cv_policy.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerow(["S.No", "Policy Parameter", "Policy Norm (Aug 2024)", "Previous Norm (Jul 2023)", "Credit Rationale"])
+    for r in cv_policy_data["rows"]:
+        writer.writerow([r["sNo"], r["parameter"], r["activeNorm"], r["previousNorm"], r["rationale"]])
+
+print("Successfully exported cv_policy.json and cv_policy.csv")
