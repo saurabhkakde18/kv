@@ -1,0 +1,17 @@
+{
+  "datasetId": "contacts",
+  "title": "Key Contacts & Support Directory",
+  "category": "Contacts",
+  "version": 1,
+  "lastUpdated": "2026-10-07",
+  "description": "Direct contact details of Credit Managers, Regional Heads, Operations, and DSA helpdesk",
+  "columns": [
+    { "key": "name", "label": "Officer Name", "type": "text", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 140 },
+    { "key": "designation", "label": "Designation / Role", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 140 },
+    { "key": "department", "label": "Department", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "region", "label": "Region / Zone", "type": "text", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "phone", "label": "Mobile No.", "type": "phone", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 120 },
+    { "key": "email", "label": "Email Address", "type": "email", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 170 }
+  ],
+  "rows": []
+}

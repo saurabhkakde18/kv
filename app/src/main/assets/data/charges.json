@@ -1,0 +1,87 @@
+{
+  "datasetId": "charges",
+  "title": "Schedule of Charges - Vehicle Finance",
+  "category": "Charges",
+  "version": 1,
+  "lastUpdated": "2026-10-07",
+  "description": "Official Kredit Venture & Jads Services Pvt Ltd schedule of processing fees, documentation charges, valuation fees, and stamp duty for vehicle finance.",
+  "columns": [
+    { "key": "sNo", "label": "S.No", "type": "number", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 60 },
+    { "key": "description", "label": "Description", "type": "text", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 200 },
+    { "key": "charges", "label": "Charges / Rate", "type": "text", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 220 },
+    { "key": "applicability", "label": "Applicability / Remarks", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": true, "widthDp": 240 },
+    { "key": "category", "label": "Charge Category", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 140 }
+  ],
+  "rows": [
+    {
+      "sNo": 1,
+      "description": "Processing Fees",
+      "charges": "1.25% + GST (1.50% + GST For Tractor Loan)",
+      "applicability": "Standard Car & CV: 1.25% + GST; Tractor Loan: 1.50% + GST on sanctioned loan amount",
+      "category": "Processing"
+    },
+    {
+      "sNo": 2,
+      "description": "Document Charges",
+      "charges": "Upto 5 Lac 1000/- Above 5 Lac 2000/- Per Loan Account",
+      "applicability": "Loan <= ₹ 5.00 Lakhs: ₹ 1,000/- | Loan > ₹ 5.00 Lakhs: ₹ 2,000/- per loan account",
+      "category": "Documentation"
+    },
+    {
+      "sNo": 3,
+      "description": "Valuation Charges (Car & SCV)",
+      "charges": "Rs. 1000/-",
+      "applicability": "Applicable for Private Cars and Small Commercial Vehicles (SCV / Pik-Up)",
+      "category": "Valuation"
+    },
+    {
+      "sNo": 4,
+      "description": "Valuation Charges (LCV / ICV)",
+      "charges": "Rs. 1200/-",
+      "applicability": "Applicable for Light Commercial Vehicles (LCV) and Intermediate Commercial Vehicles (ICV)",
+      "category": "Valuation"
+    },
+    {
+      "sNo": 5,
+      "description": "Valuation Charges (M & HCV, Tractor)",
+      "charges": "Rs. 1500/-",
+      "applicability": "Applicable for Medium & Heavy Commercial Vehicles (M&HCV) and Tractor Loans",
+      "category": "Valuation"
+    },
+    {
+      "sNo": 6,
+      "description": "Stamp duty charges",
+      "charges": "0.60% of Loan Account",
+      "applicability": "0.60% of sanctioned loan amount or as per respective State Stamp Act",
+      "category": "Statutory"
+    },
+    {
+      "sNo": 7,
+      "description": "Welcome Letter and Repayment Schedule",
+      "charges": "Free / Nil",
+      "applicability": "Complimentary digital/physical kit provided upon loan booking and disbursal",
+      "category": "Service"
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. Master Fee Structure — Kredit Venture (Jads Services Pvt Ltd)",
+      "summary": "Mandatory fee schedule applied across all vehicle loan origination files.",
+      "items": [
+        "Processing Fees: 1.25% + GST for Cars & CVs; 1.50% + GST for Tractor Loans.",
+        "Documentation Charges: ₹ 1,000 for loans up to ₹ 5 Lakhs; ₹ 2,000 for loans above ₹ 5 Lakhs.",
+        "Stamp Duty: 0.60% of Loan Account amount.",
+        "GST: Applicable at prevailing statutory rate (18%) on all service and processing fees."
+      ]
+    },
+    {
+      "title": "2. Valuation Fee Classification Matrix",
+      "summary": "Standard valuation fee slabs by vehicle category.",
+      "items": [
+        "Car & SCV: ₹ 1,000/- per asset inspection.",
+        "LCV / ICV: ₹ 1,200/- per asset inspection.",
+        "M & HCV & Tractor: ₹ 1,500/- per asset inspection."
+      ]
+    }
+  ]
+}

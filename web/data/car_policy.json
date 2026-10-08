@@ -1,0 +1,129 @@
+{
+  "datasetId": "car_policy",
+  "title": "Private Car Credit Policy",
+  "category": "Policy",
+  "version": 2,
+  "lastUpdated": "2026-02-09",
+  "description": "Kredit Venture Private Car (Amended Credit) Policy - February 9, 2026 (JADS Services Private Limited)",
+  "columns": [
+    { "key": "program", "label": "Program / Product", "type": "badge", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 160 },
+    { "key": "targetProfile", "label": "Target Profile", "type": "text", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 160 },
+    { "key": "loanCap", "label": "Loan Capping", "type": "text", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 110 },
+    { "key": "maxTenure", "label": "Max Tenure", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 100 },
+    { "key": "maxLtv", "label": "LTV (Refinance/Used)", "type": "percentage", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "criteria", "label": "Key Credit Criteria & Documentation", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 280 },
+    { "key": "propertyNorm", "label": "Property / Land Norms", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 200 }
+  ],
+  "rows": [
+    {
+      "program": "IP (Income Proof) - Salaried",
+      "targetProfile": "Salaried Employees",
+      "loanCap": "₹ 10.00 Lakhs",
+      "maxTenure": "Used - 48M",
+      "maxLtv": "90.00%",
+      "criteria": "• Max FOIR: 60%\n• Job Stability: Min 2 yrs total, at least 1 yr in same organization\n• Income Proof: Last 3M salary slip + latest Form 16 or ITR\n• Min Salary: Net ₹ 20,000/mo or Min Income ₹ 2.50 Lakhs/yr\n• Banking: Last 6 months bank statement mandatory\n• Additional: Company ID card & Appointment letter\n• Disqualifiers: Cash salary not acceptable; Direct relatives/family working in Proprietorship firm not eligible",
+      "propertyNorm": "Property ownership proof mandatory in name of applicant/co-applicant (min 1 yr residence stability) OR Agri land property proof acceptable (market value >= 4x proposed loan amount, Deviation @ L2 ACM)."
+    },
+    {
+      "program": "IP (Income Proof) - SEP",
+      "targetProfile": "Self Employed Professionals",
+      "loanCap": "₹ 10.00 Lakhs",
+      "maxTenure": "Used - 48M",
+      "maxLtv": "90.00%",
+      "criteria": "• Experience: Min 2 yrs stability or experience\n• ITR Norms: Last 2 yrs ITR min ₹ 2.50 Lakhs mandatory with >= 6M gap between both ITRs\n• ITR Filing Vintage: At least 30 days old at loan application login\n• Audited Financials: Required in Company cases\n• Banking: Last 6M or 1 Yr bank statement/passbook + ABB 2x EMI (case-by-case)\n• Field Norm: Business visit + photos documented by Company employee\n• Documents: Shop Act / Registration Certificate / GST / ITR",
+      "propertyNorm": "Property ownership proof mandatory in name of applicant/co-applicant (min 1 yr residence stability) OR Agri land property proof acceptable (market value >= 4x proposed loan amount, Deviation @ L2 ACM)."
+    },
+    {
+      "program": "NIP (Non-Income Proof)",
+      "targetProfile": "Self Employed Non-Professionals",
+      "loanCap": "₹ 8.00 Lakhs",
+      "maxTenure": "Used - 48M",
+      "maxLtv": "80.00%",
+      "criteria": "• Experience: Min 2 yrs business stability/experience (validated via PD & TVR by Sales & Credit)\n• Field Verification: Business visit + FI + photos by RM/BM/employee capturing business activity & stock\n• Income Validation: Min 6M banking, RTR, GST Certificate, business bills/receipts, commission invoices\n• Banking: Last 6 months bank statement or passbook\n• LTV Booster: Optional +5% LTV with mandatory External Guarantor owning property or min 2 Acre Agri land (Deviation @ L2 ACM)\n• Models Allowed: Hatchback, Sedan, SUV, MUV Only (Excluding Premium Models)",
+      "propertyNorm": "Property ownership proof mandatory (applicant/co-applicant, min 1 yr residence stability) OR Agri land proof acceptable (market value >= 4x loan amount, purely Agri based criteria)."
+    },
+    {
+      "program": "Repayment Surrogate",
+      "targetProfile": "Self Employed (Individual/Partnership)",
+      "loanCap": "₹ 10.00 Lakhs",
+      "maxTenure": "Used - 48M",
+      "maxLtv": "85.00%",
+      "criteria": "• Max FOIR: 60%\n• Business Stability: Min 2 yrs business experience\n• Track Record: Min 1 yr satisfactory repayment track in AL, BL, HL, LAP, Property Loan\n• Structure: Only standard EMI structure with fixed dates accepted\n• Vintage: Loan running or closed within last 1 yr only\n• DPD Norms: Max 2 bounces <30 DPD/yr; Max 1 instance 30+ DPD/yr (allowed once only); 0 EMI bounce in last 6 months (except technical error)\n• Validation: SOA / Repayment schedule + banking where repayments are made\n• Banking: Last 6M bank statement/passbook mandatory\n• Multiplier: Applied on 1 loan only (>= 12 MOB); Other loans running not eligible",
+      "propertyNorm": "Property ownership proof mandatory (applicant/co-applicant, min 1 yr residence stability) OR Agri land proof acceptable (market value >= 4x loan amount, Deviation @ L2 ACM)."
+    },
+    {
+      "program": "Banking Surrogate",
+      "targetProfile": "Self Employed Business Profiles",
+      "loanCap": "₹ 10.00 Lakhs",
+      "maxTenure": "Used - 48M",
+      "maxLtv": "80.00%",
+      "criteria": "• Excluded Profiles: Tours & Travel, Agriculturist, Non-business profiles\n• Vintage: Main business account must be at least 1 year old\n• ABB Ratio: Last 6M bank statement with ABB to EMI Ratio >= 1.5x\n• Activity: Min 4 credit business transactions per month in banking\n• Bounce & Charges: No EMI bouncing and no penal charges in last 6 months\n• Restrictions: Not applicable for CC/OD limit accounts; Overleverage cases NOT allowed; Rented profiles NOT allowed\n• Field Check: Business visit + FI + photos capturing business activity & stock presence",
+      "propertyNorm": "Property ownership proof mandatory (applicant/co-applicant, min 1 yr residence stability) OR Agri land proof acceptable (market value >= 4x loan amount, Deviation @ L2 ACM)."
+    },
+    {
+      "program": "Agri Based Funding",
+      "targetProfile": "Agriculturists & Farmers",
+      "loanCap": "₹ 10.00 Lakhs",
+      "maxTenure": "Used - 48M",
+      "maxLtv": "80.00%",
+      "criteria": "• Landholding Slabs:\n  - Up to ₹ 5.00 Lakhs: >= 2 to 3 Acres\n  - Up to ₹ 8.00 Lakhs: >= 3 to 5 Acres\n  - Up to ₹ 10.00 Lakhs: >= 5 Acres\n• Deal Structure: Property owner must be part of the deal\n• Residence Stability: Min 1 year mandatory\n• Documents: Fresh 7/12 and 8A extract of Agri land mandatory\n• Field Check: Business/Farm visit + photo documented by Company employee\n• Deviations: No LTV deviation allowed in this program\n• Disqualifier: Rented profiles NOT allowed\n• Models Allowed: Hatchback, Sedan, Compact/Mid MUV/SUV Only (Excluding Premium Models)",
+      "propertyNorm": "Mandatory fresh 7/12 & 8A extracts meeting land slabs (>=2-3 Acres for <=5L, >=3-5 Acres for <=8L, >=5 Acres for <=10L). Property owner must be on the deal."
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. Policy Identification & Authority",
+      "summary": "Kredit Venture Private Car Amended Credit Policy (February 9, 2026 - JADS Services Private Limited).",
+      "items": [
+        "Product Scope: Private Car Refinance / Used Car Purchase funding across 5 dedicated credit programs.",
+        "Authority: Kredit Venture (JADS Services Private Limited), effective February 9, 2026.",
+        "Standard Max Tenure: 48 Months across all Used Car programs.",
+        "Loan Capping: ₹ 10.00 Lakhs for IP, Repayment Surrogate, Banking Surrogate, and Agri programs; ₹ 8.00 Lakhs for NIP Program."
+      ]
+    },
+    {
+      "title": "2. Repayment Surrogate Multiplier Grid",
+      "summary": "Eligible loan multiplier values based on satisfactory repayment vintage (MOB).",
+      "items": [
+        "Auto Loan (12 MOB): 1.4 Times of repayment track",
+        "Auto Loan (24 MOB): 1.5 Times of repayment track",
+        "Business Loan (BL) / Property Loan (< ₹ 15 Lakhs) (12 MOB): 1.4 Times of repayment track",
+        "Business Loan (BL) / Property Loan (< ₹ 15 Lakhs) (24 MOB): 1.5 Times of repayment track",
+        "Loan Against Property (LAP) / Home Loan (HL) (12 MOB): 0.5 Times of repayment track",
+        "Track Norms: Minimum 1 yr track required with standard fixed-date EMI structure; running or closed within last 1 yr only.",
+        "Bouncing Norms: Max 2 bounces <30 DPD/yr, Max 1 bounce 30+ DPD/yr (once only), 0 bounce in last 6 months."
+      ]
+    },
+    {
+      "title": "3. Agri Based Funding Criteria",
+      "summary": "Clear land acreage slabs and underwriting conditions for agricultural profiles.",
+      "items": [
+        "Loan up to ₹ 5.00 Lakhs: Requires minimum 2 to 3 Acres of agricultural land.",
+        "Loan up to ₹ 8.00 Lakhs: Requires minimum 3 to 5 Acres of agricultural land.",
+        "Loan up to ₹ 10.00 Lakhs: Requires minimum 5 Acres or more of agricultural land.",
+        "Land Record Proof: Fresh 7/12 and 8A extracts mandatory.",
+        "Deal Criteria: Land owner must be part of the deal; min 1 yr residence stability; Rented profile not allowed.",
+        "No LTV deviation permitted under the Agri Based Funding program."
+      ]
+    },
+    {
+      "title": "4. General Underwriting Norms & Restrictions",
+      "summary": "Critical policy standards applicable across all private car finance proposals.",
+      "items": [
+        "End of Tenure (EOT): Car End of Tenure capped at 12 years across all segments.",
+        "Discontinued Models: Funding restricted to a maximum of 60% LTV only.",
+        "RC Serial Ownership: Permitted up to 4th owner only (including proposed ownership).",
+        "Yellow Board / Commercial: Commercial passing yellow-board cars NOT allowed under Private Car policy.",
+        "Negative Checks: NT (Negative Territory) areas and Negative Profiles must be strictly checked.",
+        "Valuation & LTV Base: LTV calculated on lower of asset cost or fair valuation from CarWale, Spinny, CARS24, OBV, IBB, etc.",
+        "External Balance Transfer (BT): Not allowed in direct sourcing; permitted only where nil hypothecation & original RTO papers in custody (applicable to branch RC limits and non-RC limit DSAs).",
+        "Hypothecated RC Cases: Car must be parked in authorized parking yard until PDD submission, with proper financier FCL letter and lien clarification email.",
+        "Rented Profiles: Permanent (Native) place address proof mandatory + FI to be conducted (local/external guarantor optional).",
+        "Commercial Use Deduction: 10% standard LTV deduction from applicable norms if vehicle is used for commercial purpose.",
+        "RC Limit & PDD Norms: Governed by standard CV policy norms.",
+        "Age Criteria: Entry and maturity age criteria as per CV policy.",
+        "Deviations: Any other deviation strictly approved at RCM / NCM level only."
+      ]
+    }
+  ]
+}

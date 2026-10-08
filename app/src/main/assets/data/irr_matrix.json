@@ -1,0 +1,33 @@
+{
+  "datasetId": "irr_matrix",
+  "title": "IRR & Interest Rate Matrix",
+  "category": "IRR",
+  "version": 1,
+  "lastUpdated": "2026-10-07",
+  "description": "Grid of internal rate of return (IRR) / interest rates across products, CIBIL score tiers, and tenure buckets",
+  "columns": [
+    { "key": "product", "label": "Product", "type": "badge", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "cibilTier", "label": "CIBIL Tier", "type": "badge", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "slab", "label": "Loan Amount Slab", "type": "text", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 130 },
+    { "key": "tenure36m", "label": "36M Rate", "type": "percentage", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 90 },
+    { "key": "tenure48m", "label": "48M Rate", "type": "percentage", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 90 },
+    { "key": "tenure60m", "label": "60M Rate", "type": "percentage", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 90 },
+    { "key": "tenure84m", "label": "84M Rate", "type": "percentage", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 90 },
+    { "key": "procFee", "label": "Processing Fee", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 110 }
+  ],
+  "rows": [
+    { "product": "New Car", "cibilTier": "Tier 1 (750+)", "slab": "₹ 5L - ₹ 15L", "tenure36m": "8.85%", "tenure48m": "8.95%", "tenure60m": "9.10%", "tenure84m": "9.35%", "procFee": "0.50% (Max ₹5,000)" },
+    { "product": "New Car", "cibilTier": "Tier 1 (750+)", "slab": "> ₹ 15 Lakhs", "tenure36m": "8.65%", "tenure48m": "8.75%", "tenure60m": "8.90%", "tenure84m": "9.15%", "procFee": "0.50% (Max ₹5,000)" },
+    { "product": "New Car", "cibilTier": "Tier 2 (700-749)", "slab": "₹ 5L - ₹ 15L", "tenure36m": "9.25%", "tenure48m": "9.40%", "tenure60m": "9.55%", "tenure84m": "9.85%", "procFee": "0.75% (Max ₹7,500)" },
+    { "product": "New Car", "cibilTier": "Tier 2 (700-749)", "slab": "> ₹ 15 Lakhs", "tenure36m": "9.05%", "tenure48m": "9.20%", "tenure60m": "9.35%", "tenure84m": "9.60%", "procFee": "0.75% (Max ₹7,500)" },
+    { "product": "New Car", "cibilTier": "Tier 3 (650-699)", "slab": "All Slabs", "tenure36m": "10.25%", "tenure48m": "10.50%", "tenure60m": "10.75%", "tenure84m": "11.25%", "procFee": "1.00% + GST" },
+    { "product": "New Car", "cibilTier": "NTC / -1 Score", "slab": "All Slabs", "tenure36m": "9.75%", "tenure48m": "9.95%", "tenure60m": "10.20%", "tenure84m": "10.50%", "procFee": "1.00% + GST" },
+    { "product": "Used Car", "cibilTier": "Tier 1 (750+)", "slab": "₹ 3L - ₹ 10L", "tenure36m": "12.50%", "tenure48m": "12.75%", "tenure60m": "13.00%", "tenure84m": "N/A", "procFee": "1.50% + GST" },
+    { "product": "Used Car", "cibilTier": "Tier 2 (700-749)", "slab": "₹ 3L - ₹ 10L", "tenure36m": "13.25%", "tenure48m": "13.50%", "tenure60m": "13.75%", "tenure84m": "N/A", "procFee": "1.50% + GST" },
+    { "product": "Used Car", "cibilTier": "Tier 3 (650-699)", "slab": "All Slabs", "tenure36m": "14.50%", "tenure48m": "15.00%", "tenure60m": "15.50%", "tenure84m": "N/A", "procFee": "2.00% + GST" },
+    { "product": "SCV / Pik-Up", "cibilTier": "Tier 1 (720+)", "slab": "₹ 4L - ₹ 10L", "tenure36m": "12.25%", "tenure48m": "12.50%", "tenure60m": "12.75%", "tenure84m": "N/A", "procFee": "1.25% + GST" },
+    { "product": "SCV / Pik-Up", "cibilTier": "Tier 2 (675-719)", "slab": "₹ 4L - ₹ 10L", "tenure36m": "13.25%", "tenure48m": "13.50%", "tenure60m": "13.85%", "tenure84m": "N/A", "procFee": "1.50% + GST" },
+    { "product": "LCV / MHCV", "cibilTier": "Tier 1 (720+)", "slab": "₹ 15L - ₹ 50L", "tenure36m": "11.25%", "tenure48m": "11.50%", "tenure60m": "11.75%", "tenure84m": "N/A", "procFee": "1.00% + GST" },
+    { "product": "LCV / MHCV", "cibilTier": "Tier 2 (675-719)", "slab": "₹ 15L - ₹ 50L", "tenure36m": "12.00%", "tenure48m": "12.25%", "tenure60m": "12.50%", "tenure84m": "N/A", "procFee": "1.25% + GST" }
+  ]
+}

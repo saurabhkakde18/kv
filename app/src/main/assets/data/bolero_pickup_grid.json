@@ -1,0 +1,152 @@
+{
+  "datasetId": "bolero_pickup_grid",
+  "title": "Bolero Pickup Master Grid & Refinance Matrix",
+  "category": "Bolero",
+  "version": 2,
+  "lastUpdated": "2026-10-07",
+  "description": "Year-wise valuation grid (2022 to 2012), customer category LTV matrices (Suvidha, FTU, FTB, Fleet, Captive), and credit parameters for Mahindra Bolero Pickup, Camper, and Maxi Truck",
+  "columns": [
+    { "key": "categoryType", "label": "Grid / Category", "type": "badge", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 140 },
+    { "key": "modelTier", "label": "Model / Variant Tier", "type": "text", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 160 },
+    { "key": "y2022", "label": "2022 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2021", "label": "2021 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2020", "label": "2020 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2019", "label": "2019 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2018", "label": "2018 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2017", "label": "2017 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2016", "label": "2016 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2015", "label": "2015 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2014", "label": "2014 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2013", "label": "2013 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 },
+    { "key": "y2012", "label": "2012 (₹)", "type": "currency", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 105 }
+  ],
+  "rows": [
+    {
+      "categoryType": "New KV Grid",
+      "modelTier": "Tier 1 (ExtraLong / 1.7T / HD)",
+      "y2022": "₹ 9,30,000",
+      "y2021": "₹ 8,95,000",
+      "y2020": "₹ 8,54,000",
+      "y2019": "₹ 8,10,000",
+      "y2018": "₹ 7,75,000",
+      "y2017": "₹ 7,33,000",
+      "y2016": "₹ 6,95,000",
+      "y2015": "₹ 6,55,000",
+      "y2014": "₹ 6,00,000",
+      "y2013": "₹ 5,40,000",
+      "y2012": "₹ 4,85,000"
+    },
+    {
+      "categoryType": "New KV Grid",
+      "modelTier": "Tier 2 (1.3T / ExtraStrong / City)",
+      "y2022": "₹ 7,89,000",
+      "y2021": "₹ 7,59,000",
+      "y2020": "₹ 7,30,000",
+      "y2019": "₹ 6,85,000",
+      "y2018": "₹ 6,53,000",
+      "y2017": "₹ 6,10,000",
+      "y2016": "₹ 5,80,000",
+      "y2015": "₹ 5,30,000",
+      "y2014": "₹ 5,00,000",
+      "y2013": "₹ 4,50,000",
+      "y2012": "₹ 4,20,000"
+    },
+    {
+      "categoryType": "New KV Grid",
+      "modelTier": "Tier 3 (Camper / CBC / Flat Bed)",
+      "y2022": "₹ 7,60,000",
+      "y2021": "₹ 7,32,000",
+      "y2020": "₹ 6,89,000",
+      "y2019": "₹ 6,40,000",
+      "y2018": "₹ 5,70,000",
+      "y2017": "₹ 5,40,000",
+      "y2016": "₹ 5,00,000",
+      "y2015": "₹ 4,60,000",
+      "y2014": "₹ 4,25,000",
+      "y2013": "₹ 3,70,000",
+      "y2012": "₹ 3,20,000"
+    },
+    {
+      "categoryType": "Existing KV Grid",
+      "modelTier": "Tier 1 (ExtraLong / 1.7T / HD)",
+      "y2022": "₹ 8,60,000",
+      "y2021": "₹ 8,20,000",
+      "y2020": "₹ 7,80,000",
+      "y2019": "₹ 7,40,000",
+      "y2018": "₹ 7,10,000",
+      "y2017": "₹ 6,70,000",
+      "y2016": "₹ 6,40,000",
+      "y2015": "₹ 6,10,000",
+      "y2014": "₹ 5,50,000",
+      "y2013": "₹ 5,10,000",
+      "y2012": "₹ 4,50,000"
+    },
+    {
+      "categoryType": "Existing KV Grid",
+      "modelTier": "Tier 2 (1.3T / ExtraStrong / City)",
+      "y2022": "₹ 7,50,000",
+      "y2021": "₹ 7,10,000",
+      "y2020": "₹ 6,70,000",
+      "y2019": "₹ 6,30,000",
+      "y2018": "₹ 6,00,000",
+      "y2017": "₹ 5,60,000",
+      "y2016": "₹ 5,30,000",
+      "y2015": "₹ 5,00,000",
+      "y2014": "₹ 4,75,000",
+      "y2013": "₹ 4,20,000",
+      "y2012": "₹ 4,00,000"
+    },
+    {
+      "categoryType": "Existing KV Grid",
+      "modelTier": "Tier 3 (Camper / CBC / Flat Bed)",
+      "y2022": "₹ 7,10,000",
+      "y2021": "₹ 6,80,000",
+      "y2020": "₹ 6,40,000",
+      "y2019": "₹ 6,00,000",
+      "y2018": "₹ 5,40,000",
+      "y2017": "₹ 5,10,000",
+      "y2016": "₹ 4,70,000",
+      "y2015": "₹ 4,40,000",
+      "y2014": "₹ 4,00,000",
+      "y2013": "₹ 3,50,000",
+      "y2012": "₹ 3,00,000"
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. Customer Categories & LTV Matrix (Repurchase Funding)",
+      "summary": "Eligible LTV limits categorized by driver profile, fleet size, and captive segment.",
+      "items": [
+        "Suvidha Profile (Driver turning owner without DL, 60% No Grt, if add up to 5% then Grt required, specially for rented profile): Max 60% LTV",
+        "FTU - First Time User (Without DL): Max 80% LTV",
+        "FTB - First Time Buyer (With Transport TR-DL): Max 85% LTV",
+        "Small Transporter (STO): Max 85% LTV",
+        "Small Fleet Operator (SFO-1 & SFO-2): Max 90% LTV",
+        "Medium Fleet Operator (MFO): Max 90% LTV",
+        "Large Fleet Operator (LFO): Max 95% LTV",
+        "Captive Category A & B: Max 90% LTV",
+        "Captive Category C: Max 85% LTV",
+        "Captive Category D (User funding restricted up to Pickup only): Max 80% LTV"
+      ]
+    },
+    {
+      "title": "2. Asset & Operational Policy Parameters",
+      "summary": "Mandatory credit parameters for Mahindra Bolero Pickup, Camper, and Maxi Truck.",
+      "items": [
+        "Product Coverage: Goods segment - Mahindra Bolero Pickup, Camper, and Maxi truck (Only for Non-breach branches).",
+        "Business Experience: For FTB and above, Business experience = 2 years (Proof: LMV or above DL with transport validity / RC / Invoice / RTR / ITR / GSTR).",
+        "Property Ownership: Owned Residential/Commercial property or Agri land min 2.00 acres in name of applicant/co-applicant.",
+        "Rented Profile Norm: 5% standard deduction from applicable LTV + External Guarantor with Property Ownership mandatory.",
+        "Co-Applicant Norm: Immediate family member mandatory as co-applicant.",
+        "Asset Age & EOT Norm: End of Tenure (EOT) must be < 15 Years as per respective RTO authority (Existing norms for SCV/Pickup < 12 yrs).",
+        "Ownership Capping: Used asset funding restricted up to 5th Owner, including proposed ownership.",
+        "License Capping: Funding based on LMV-TR DL restricted to LCV or < 8 Ton of GVW only.",
+        "Personal Discussion (PD): PD by RM / CRM / BM & above mandatory.",
+        "LTV & Loan Cap: Max 90% LTV or Loan amount up to ₹ 8,00,000 (Applicable for FTU & FTB clients).",
+        "Tenure: Max 48 Months (Additional 6 months up to 54M allowed @ RCM/PH approval, subject to EOT norms).",
+        "Fitness & Banking: Valid Fitness Certificate mandatory + Last 6 months bank statement.",
+        "IRR: As per official IRR Matrix."
+      ]
+    }
+  ]
+}

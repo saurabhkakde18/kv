@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Luxury Gold Emblem -->
+    <path
+        android:fillColor="#D4AF37"
+        android:pathData="M54,22L28,38v32l26,16l26,-16V38L54,22z M54,27.5l21,13v27l-21,13l-21,-13v-27L54,27.5z" />
+    <path
+        android:fillColor="#F3E5AB"
+        android:pathData="M42,50h24v6h-24z M48,42h12v4h-12z M45,60h18v4h-18z" />
+</vector>

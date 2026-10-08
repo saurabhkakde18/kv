@@ -1,0 +1,24 @@
+{
+  "datasetId": "schemes",
+  "title": "Special Schemes & Promotional Offers",
+  "category": "Schemes",
+  "version": 1,
+  "lastUpdated": "2026-10-07",
+  "description": "Active promotional subventions, festive interest concessions, processing fee waivers, and campaign schemes",
+  "columns": [
+    { "key": "schemeName", "label": "Scheme Title", "type": "text", "isPrimary": true, "isSortable": true, "isFilterable": true, "widthDp": 160 },
+    { "key": "targetProduct", "label": "Eligible Product", "type": "badge", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 120 },
+    { "key": "benefit", "label": "Key Benefit / Offer", "type": "text", "isPrimary": false, "isSortable": false, "isFilterable": false, "widthDp": 160 },
+    { "key": "validFrom", "label": "Valid From", "type": "date", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 100 },
+    { "key": "validTill", "label": "Valid Till", "type": "date", "isPrimary": false, "isSortable": true, "isFilterable": false, "widthDp": 100 },
+    { "key": "status", "label": "Status", "type": "status", "isPrimary": false, "isSortable": true, "isFilterable": true, "widthDp": 100 }
+  ],
+  "rows": [
+    { "schemeName": "Festive Dhamaka Car Loan", "targetProduct": "New Car", "benefit": "Flat 8.65% ROI + Zero Processing Fee", "validFrom": "2026-09-15", "validTill": "2026-11-15", "status": "Active" },
+    { "schemeName": "Bolero Maxx Festive Booster", "targetProduct": "Bolero Pik-Up", "benefit": "100% Ex-Showroom funding + ₹5,000 Fuel voucher", "validFrom": "2026-10-01", "validTill": "2026-11-30", "status": "Active" },
+    { "schemeName": "Commercial Fleet Surge", "targetProduct": "LCV / MHCV", "benefit": "0.35% Extra DSA Commission for > 5 chassis logins", "validFrom": "2026-10-01", "validTill": "2026-10-31", "status": "Active" },
+    { "schemeName": "Green EV Special Drive", "targetProduct": "New Car EV", "benefit": "Subsidized 8.40% ROI for Tata Nexon / Punch EV", "validFrom": "2026-08-01", "validTill": "2026-12-31", "status": "Active" },
+    { "schemeName": "Independence Day Bonanza", "targetProduct": "Used Car", "benefit": "Flat 50% waiver on documentation charges", "validFrom": "2026-08-01", "validTill": "2026-08-31", "status": "Expired" },
+    { "schemeName": "Monsoon CV Refinance Carnival", "targetProduct": "Used CV", "benefit": "Top up up to 130% IDV on clean 12M track", "validFrom": "2026-07-01", "validTill": "2026-08-15", "status": "Expired" }
+  ]
+}
